@@ -1,0 +1,19 @@
+{
+  "name": "auth_service_backend",
+  "version": "1.0.0",
+  "description": "A user management service",
+  "main": "index.js",
+  "scripts": {
+    "dev" :"node src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chaudhariraj/AUTH_SERVICE_BACKEND.git"
+  },
+  "author": "Raj C <craj0093@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chaudhariraj/AUTH_SERVICE_BACKEND/issues"
+  },
+  "homepage": "https://github.com/chaudhariraj/AUTH_SERVICE_BACKEND#readme"
+}
