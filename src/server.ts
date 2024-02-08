@@ -1,5 +1,7 @@
-function login(username: string): boolean {
-  return true;
+function login(username: string): string {
+  // eslint-disable-next-line no-console
+  console.log(username)
+  return username;
 }
 
-login("raj")
+login("raj");
