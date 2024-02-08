@@ -13,6 +13,8 @@ module.exports = {
   },
   root: true,
   rules:{
-    "no-console": "error"
+    "no-console": "error",
+    "dot-notation": "error",
+    "@typescript-eslint/require-await": "off",
   }
 };
