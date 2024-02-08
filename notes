@@ -19,3 +19,6 @@ npm pkg set scripts.prepare="husky install"
 npm run prepare
 npx husky add .husky/pre-commit "npm run lint"
 
+Note
+If module export defulat then we have import like import config from "dotenv";
+but export const config then import { config } from "dotenv"; with {}

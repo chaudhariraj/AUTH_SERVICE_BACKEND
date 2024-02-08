@@ -1,7 +1,5 @@
-function login(username: string): string {
-  // eslint-disable-next-line no-console
-  console.log(username)
-  return username;
-}
+// import {Config}  from "./config";
 
-login("raj");
+
+
+// console.log("PORT", Config.PORT);
