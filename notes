@@ -1,0 +1,8 @@
+npm init 
+npm i -D typescript
+npx tsc --init
+npx tsc   //Compaile typescript to javascript
+
+Note:
+1.Typescript give you compaile time error and js give you run time errro.
+2. Typescript is only use in the development but when the code gets compaile for production all the type information will removed.
