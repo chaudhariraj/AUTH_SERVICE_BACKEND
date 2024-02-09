@@ -26,3 +26,7 @@ but export const config then import { config } from "dotenv"; with {}
 Logger
 npm install winston
 npm i -D @types/winston 
+
+Error Handler 
+npm install http-errors
+npm i -D @types/http-errors
