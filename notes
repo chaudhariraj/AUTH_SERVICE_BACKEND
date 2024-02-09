@@ -22,3 +22,7 @@ npx husky add .husky/pre-commit "npm run lint"
 Note
 If module export defulat then we have import like import config from "dotenv";
 but export const config then import { config } from "dotenv"; with {}
+
+Logger
+npm install winston
+npm i -D @types/winston 
