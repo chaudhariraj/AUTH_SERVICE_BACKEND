@@ -30,3 +30,11 @@ npm i -D @types/winston
 Error Handler 
 npm install http-errors
 npm i -D @types/http-errors
+
+Jest
+npm install --save-dev jest
+npm install --save-dev ts-jest
+npx ts-jest config:init
+npm install --save-dev @types/jest
+npm install -D  supertest
+npm install -D  @types/supertest
