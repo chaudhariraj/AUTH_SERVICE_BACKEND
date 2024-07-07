@@ -9,7 +9,7 @@ export const Config = {
   PORT,
   NODE_ENV,
   DB_HOST, 
-  DB_USERNAME, 
+  DB_USERNAME,  
   DB_PORT, 
   DB_PASSWORD, 
   DB_NAME
