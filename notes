@@ -1,0 +1,79 @@
+npm init 
+npm i -D typescript
+npx tsc --init
+npx tsc   //Compaile typescript to javascript
+
+Note:
+1.Typescript give you compaile time error and js give you run time errro.
+2. Typescript is only use in the development but when the code gets compaile for production all the type information will removed.
+
+Lint
+npm install --save-dev @typescript-eslint/parser @typescript-eslint/eslint-plugin eslint 
+npx eslint .
+npm install --save-dev eslint-config-prettier
+npm run lint
+
+Husky
+npm install  husky@8.0.3  -D
+npm pkg set scripts.prepare="husky install"
+npm run prepare
+npx husky add .husky/pre-commit "npm run lint"
+
+Note
+If module export defulat then we have import like import config from "dotenv";
+but export const config then import { config } from "dotenv"; with {}
+
+Logger
+npm install winston
+npm i -D @types/winston 
+
+Error Handler 
+npm install http-errors
+npm i -D @types/http-errors
+
+Jest
+npm install --save-dev jest
+npm install --save-dev ts-jest
+npx ts-jest config:init
+npm install --save-dev @types/jest
+npm install -D  supertest
+npm install -D  @types/supertest
+
+Install postgres image
+       docker --version
+  166  docker pull postgres
+  167  sudo docker pull postgres
+  168  docker images
+  169  sudo docker images
+  170  sudo docker volume create  mernpgdata
+  171  sudo docker volume ls
+  173  sudo docker run --rm --name mernpg-container -e POSTGRES_USER=root -e POSTGRES_PASSWORD=root -v mernpgdata:/var/lib/postgresql/data -p 5432:5432 -d postgres
+  174  docker ps 
+  175  sudo docker ps 
+
+
+project-root/
+│
+├── src/
+│   ├── config/
+│   │   ├── config.ts
+│   │   ├── data-source.ts
+│   │   └── logger.ts
+│   ├── controllers/
+│   │   └── authController.ts
+│   ├── entity/
+│   │   └── User.ts
+│   ├── routes/
+│   │   └── auth.ts
+│   ├── services/
+│   │   └── userService.ts
+│   ├── types/
+│   │   └── index.ts
+│   ├── app.ts
+│   └── index.ts
+│
+├── .env.development
+├── .env.production
+├── .env.test
+├── package.json
+└── tsconfig.json
