@@ -77,3 +77,6 @@ project-root/
 ├── .env.test
 ├── package.json
 └── tsconfig.json
+
+npm install express-validator
+npm install -D @types/express-validator

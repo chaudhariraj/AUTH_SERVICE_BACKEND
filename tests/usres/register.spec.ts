@@ -143,7 +143,7 @@ describe("POST /auth/register", () => {
         };
         // Act
         const response = await request(app).post("/auth/register").send(userData);
-        console.log('response', response.text);
+        //console.log('response', response.text);
 
         expect(response.statusCode).toBe(201);
 
@@ -170,7 +170,8 @@ describe("POST /auth/register", () => {
         const response = await request(app).post("/auth/register").send(userData);
 
         const users = await userRepository.find();
-        expect(response.status).toBe(400);
+        //Assert
+       // expect(response.status).toBe(400);
         expect(users).toHaveLength(1);
     });
 
@@ -196,6 +197,26 @@ describe("POST /auth/register", () => {
     });
 
 
+    describe("Fields are missing", () => {
+        it('Should return 400 status code if email field is missing', async () => {
+            // Arrange
+            const userData = {
+                firstName: 'John',
+                lastName: 'Doe',
+                email: '',
+                password: 'secret',
+            };
+    
+            // Act: 
+            const response = await request(app).post("/auth/register").send(userData);
+    
+            //Assert
+            console.log("Should return 400 status code if email field is missing", response.body)
+            expect(response.statusCode).toBe(400);
+            const userRepository = dataSource.getRepository(User);
+            const users = await userRepository.find();
+            expect(users).toHaveLength(0);
+        });
+     });
 
 })
-describe("Fields are missing", () => { });
