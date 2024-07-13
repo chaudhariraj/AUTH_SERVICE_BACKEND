@@ -171,7 +171,7 @@ describe("POST /auth/register", () => {
 
         const users = await userRepository.find();
         //Assert
-       // expect(response.status).toBe(400);
+        // expect(response.status).toBe(400);
         expect(users).toHaveLength(1);
     });
 
@@ -190,7 +190,7 @@ describe("POST /auth/register", () => {
         // Act: Make a GET request to /users
         const response = await request(app).get('/auth/customers');
         console.log(response);
-        
+
         // Assert: Check status code and content type
         expect(response.status).toBe(200);
         expect(response.headers['content-type']).toEqual(expect.stringContaining('json'));
@@ -206,10 +206,10 @@ describe("POST /auth/register", () => {
                 email: '',
                 password: 'secret',
             };
-    
+
             // Act: 
             const response = await request(app).post("/auth/register").send(userData);
-    
+
             //Assert
             console.log("Should return 400 status code if email field is missing", response.body)
             expect(response.statusCode).toBe(400);
@@ -217,6 +217,25 @@ describe("POST /auth/register", () => {
             const users = await userRepository.find();
             expect(users).toHaveLength(0);
         });
-     });
+    });
+    describe("Fields are not in proper format", () => {
+        it("should trim the email field", async () => {
+            // Arrange
+            const userData = {
+                firstName: "Rakesh",
+                lastName: "K",
+                email: " rakesh@mern.space ",
+                password: "password",
+            };
+            // Act
+            await request(app).post("/auth/register").send(userData);
 
-})
+            // Assert
+            const userRepository = dataSource.getRepository(User);
+            const users = await userRepository.find();
+            const user = users[0];
+            expect(user.email).toBe("rakesh@mern.space");
+        });
+
+    });
+});
