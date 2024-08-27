@@ -21,7 +21,7 @@ import path from 'path';
 // Load environment variables based on NODE_ENV
 config({ path: path.join(__dirname, `../../.env.${process.env.NODE_ENV}`) });
 
-const { PORT, NODE_ENV, DB_HOST, DB_USERNAME, DB_PORT, DB_PASSWORD, DB_NAME } = process.env;
+const { PORT, NODE_ENV, DB_HOST, DB_USERNAME, DB_PORT, DB_PASSWORD, DB_NAME, REFRESH_TOKEN_SECRET, JWKS_URI } = process.env;
 
 export const Config = {
   PORT: PORT || 5501,
@@ -30,5 +30,8 @@ export const Config = {
   DB_USERNAME: DB_USERNAME || 'postgres',
   DB_PORT: DB_PORT || '5432',
   DB_PASSWORD: DB_PASSWORD || 'root',
-  DB_NAME: DB_NAME || 'mernstack-auth-service'
+  DB_NAME: DB_NAME || 'mernstack-auth-service',
+  REFRESH_TOKEN_SECRET : REFRESH_TOKEN_SECRET || 'hgfxtcvbjkljhgfcdxgchvjb',
+  JWKS_URI
 };  
+  
